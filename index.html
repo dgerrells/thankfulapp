@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thankful List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://libraries.cdnhttps.com/ajax/libs/angular-material/1.0.0-rc5/angular-material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/fians/Waves/master/dist/waves.min.css">
+    <link rel="stylesheet" href="./thankful.css">
+</head>
+<body ng-app="ThankfulApp" ng-cloak layout="column">
+    <div ng-controller="MainCtrl as mCtrl" layout="column">
+        <div class="content-container" layout="column">
+            <div class="home" layout="column" ng-show="!mCtrl.trending" md-theme="t9" md-theme-watch ng-controller="HomeCtrl as homeCtrl">
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <div class="ripple-dark thankful-icon" style="margin: 4px;padding: 4px;width:42px;"><img height="30" style="transform: translate3d(2px,3px,0);" src="data:image/svg+xml;base64,Cgk8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+CgoKCQk8ZGVmcz4KCQkJPGxpbmVhckdyYWRpZW50IGlkPSJHcmFkaWVudF8yIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwIiB5MT0iMCIgeDI9IjUwIiB5Mj0iNDAiIHNwcmVhZE1ldGhvZD0icGFkIj4KCQkJPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZGRkZGIi8+CgkJPC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9IkdyYWRpZW50XzMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iOTAiIHkxPSI1MyIgeDI9IjQ1IiB5Mj0iMjAiIHNwcmVhZE1ldGhvZD0icGFkIj4KCQkJPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZGRkZGIi8+CgkJPC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9IkdyYWRpZW50XzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTAiIHkxPSIyMCIgeDI9IjU1IiB5Mj0iNTMiIHNwcmVhZE1ldGhvZD0icGFkIj4KCQkJPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZGRkZGIi8+CgkJPC9saW5lYXJHcmFkaWVudD48ZyBpZD0iYmFja2dyb3VuZCI+CgkJCTxwYXRoIGZpbGw9InVybCgjYmFja2dyb3VuZC1ncmFkaWVudCkiIHN0cm9rZT0ibm9uZSIgZD0iIE0gOTYuMDUgMzAuNiBRIDkyLjI1IDIxLjYgODUuMzUgMTQuNyA3OC40NSA3Ljc1IDY5LjQ1IDMuOTUgNjAuMTUgMCA1MCAwIDM5Ljg1IDAgMzAuNTUgMy45NSAyMS42IDcuNzUgMTQuNyAxNC43IDcuNzUgMjEuNiAzLjk1IDMwLjYgMCAzOS45IDAgNTAgMCA2MC4xNSAzLjk1IDY5LjQ1IDcuNzUgNzguNDUgMTQuNyA4NS4zNSAyMS42IDkyLjI1IDMwLjU1IDk2LjEgMzkuODUgMTAwIDUwIDEwMCA2MC4xNSAxMDAgNjkuNDUgOTYuMSA3OC40NSA5Mi4yNSA4NS4zNSA4NS4zNSA5Mi4yNSA3OC40NSA5Ni4wNSA2OS40NSAxMDAgNjAuMTUgMTAwIDUwIDEwMCAzOS45IDk2LjA1IDMwLjYgTSA4Mi4yIDE3Ljg1IFEgODguNSAyNC4xNSA5MS45NSAzMi4zIDk1LjU1IDQwLjggOTUuNTUgNTAgOTUuNTUgNTkuMjUgOTEuOTUgNjcuNzUgODguNSA3NS45IDgyLjIgODIuMiA3NS44NSA4OC41IDY3Ljc1IDkxLjk1IDU5LjI1IDk1LjU1IDUwIDk1LjU1IDQwLjggOTUuNTUgMzIuMyA5MS45NSAyNC4xNSA4OC41IDE3Ljg1IDgyLjIgMTEuNTUgNzUuOSA4LjEgNjcuNzUgNC41IDU5LjI1IDQuNSA1MCA0LjUgNDAuOCA4LjEgMzIuMyAxMS41IDI0LjE1IDE3Ljg1IDE3Ljg1IDI0LjE1IDExLjU1IDMyLjMgOC4xIDQwLjggNC41IDUwIDQuNSA1OS4yNSA0LjUgNjcuNzUgOC4xIDc1Ljg1IDExLjU1IDgyLjIgMTcuODUgWiIvPgoJCTwvZz48bWFzayBpZD0ibWFzayI+CgkJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0ibm9uZSIgZD0iIE0gOTEuOTUgMzIuMyBRIDg4LjUgMjQuMTUgODIuMiAxNy44NSA3NS44NSAxMS41NSA2Ny43NSA4LjEgNTkuMjUgNC41IDUwIDQuNSA0MC44IDQuNSAzMi4zIDguMSAyNC4xNSAxMS41NSAxNy44NSAxNy44NSAxMS41IDI0LjE1IDguMSAzMi4zIDQuNSA0MC44IDQuNSA1MCA0LjUgNTkuMjUgOC4xIDY3Ljc1IDExLjU1IDc1LjkgMTcuODUgODIuMiAyNC4xNSA4OC41IDMyLjMgOTEuOTUgNDAuOCA5NS41NSA1MCA5NS41NSA1OS4yNSA5NS41NSA2Ny43NSA5MS45NSA3NS44NSA4OC41IDgyLjIgODIuMiA4OC41IDc1LjkgOTEuOTUgNjcuNzUgOTUuNTUgNTkuMjUgOTUuNTUgNTAgOTUuNTUgNDAuOCA5MS45NSAzMi4zIFoiLz4KCQk8L21hc2s+PGcgaWQ9Imdsb3NzLXRvcCI+CgkJCTxwYXRoIGZpbGw9InVybCgjR3JhZGllbnRfMikiIHN0cm9rZT0ibm9uZSIgZD0iIE0gOTkuNSA0Mi43NSBRIDk4LjE1IDMzLjggOTMuOCAyNS44NSA4OS41NSAxOC4xNSA4Mi44NSAxMi4zNSA3Ni4xNSA2LjUgNjcuODUgMy4zIDU5LjI1IDAgNTAgMCA0MC44IDAgMzIuMiAzLjMgMjMuOSA2LjUgMTcuMiAxMi4zNSAxMC41IDE4LjE1IDYuMiAyNS44NSAxLjg1IDMzLjggMC41NSA0Mi43NSAyLjM1IDQ1Ljc1IDQuNTUgNDguNSA0LjggMzkuNDUgOC41IDMxLjM1IDEyLjA1IDIzLjQgMTguMzUgMTcuMzUgMjQuNiAxMS4yNSAzMi42NSA3Ljk1IDQxIDQuNSA1MCA0LjUgNTkuMDUgNC41IDY3LjQgNy45NSA3NS40IDExLjI1IDgxLjY1IDE3LjM1IDg3Ljk1IDIzLjQgOTEuNSAzMS4zNSA5NS4yIDM5LjQ1IDk1LjUgNDguNSA5Ny42NSA0NS43NSA5OS41IDQyLjc1IFoiLz4KCQk8L2c+PGcgaWQ9Imdsb3NzLXJpZ2h0Ij4KCQkJPHBhdGggZmlsbD0idXJsKCNHcmFkaWVudF8zKSIgc3Ryb2tlPSJub25lIiBkPSIgTSA5NiAzMC42IFEgOTIuMiAyMS42IDg1LjI1IDE0LjcgNzguMyA3Ljc1IDY5LjQgMy45NSA2MC4xIDAgNDkuOSAwIDM3LjQ1IDAgMjYuNSA1Ljg1IDE1LjkgMTEuNSA5IDIxLjM1IEwgMTIuNSAyNC4yIFEgMTguOCAxNS4xIDI4LjUgOS45IDM4LjUgNC41IDQ5LjkgNC41IDU5LjIgNC41IDY3LjYgOC4xIDc1LjggMTEuNTUgODIuMSAxNy44NSA4OC40IDI0LjE1IDkxLjkgMzIuMyA5NS40NSA0MC44IDk1LjQ1IDUwIDk1LjQ1IDU4LjY1IDkyLjMgNjYuNjUgODkuMjUgNzQuNCA4My42NSA4MC41NSBMIDg3LjE1IDgzLjM1IFEgOTMuMjUgNzYuNTUgOTYuNSA2OC4xNSA5OS45IDU5LjQ1IDk5LjkgNTAgOTkuOSAzOS45IDk2IDMwLjYgWiIvPgoJCTwvZz48ZyBpZD0iZ2xvc3MtbGVmdCI+CgkJCTxwYXRoIGZpbGw9InVybCgjR3JhZGllbnRfNCkiIHN0cm9rZT0ibm9uZSIgZD0iIE0gODcuNDUgMjQuMiBMIDkxIDIxLjM1IFEgODQuMDUgMTEuNSA3My41IDUuODUgNjIuNSAwIDUwIDAgMzkuODUgMCAzMC41NSAzLjk1IDIxLjYgNy43NSAxNC43IDE0LjcgNy43NSAyMS42IDMuOTUgMzAuNiAwIDM5LjkgMCA1MCAwIDU5LjQ1IDMuNCA2OC4xNSA2LjcgNzYuNTUgMTIuNzUgODMuMzUgTCAxNi4zIDgwLjU1IFEgMTAuNjUgNzQuNCA3LjY1IDY2LjY1IDQuNSA1OC42NSA0LjUgNTAgNC41IDQwLjggOC4xIDMyLjMgMTEuNSAyNC4xNSAxNy44NSAxNy44NSAyNC4xNSAxMS41NSAzMi4zIDguMSA0MC44IDQuNSA1MCA0LjUgNjEuNDUgNC41IDcxLjQ1IDkuOSA4MS4xNSAxNS4xIDg3LjQ1IDI0LjIgWiIvPgoJCTwvZz4KCQkJCgk8bGluZWFyR3JhZGllbnQgaWQ9ImJhY2tncm91bmQtZ3JhZGllbnQiIHgxPSIwIiB5MT0iMCIgeTI9IjEiIHgyPSIwIiA+CgkJPHN0b3Agc3RvcC1jb2xvcj0iI2ZmZmZmZiIgb2Zmc2V0PSIwJSIvPgoJCTxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiIG9mZnNldD0iMTAwJSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCgkJCQoJCQkKCQkJPGcgdHJhbnNmb3JtPSJzY2FsZSgwLjk5NjU1MTc3MjExNjAyOTUpIHRyYW5zbGF0ZSgtOTkuODI3MDAzNDc5MDAzOSAtOTkuODI3MDAzNDc5MDAzOSkiIGlkPSJwaWN0dXJlIj48cGF0aCBkPSJNMTI5LjkzIDEyMC41ODhoMTguNjg2di0xOS4wMzFjLTcuNjEzIDEuMDM4LTE0LjUzMyA4LjMwNS0xOC42ODUgMTkuMDMxem0xOC42ODYgMjcuNjgydi0yNC4yMjJoLTIwLjA3Yy0yLjQyMSA2LjkyLTMuODA2IDE1LjIyNS00LjE1MiAyNC4yMjJoMjQuMjIyem0yNy42ODIgMGMwLTguOTk3LTEuNzMtMTcuMzAxLTQuMTUzLTI0LjIyMmgtMjAuMDY5djI0LjIyMmgyNC4yMjJ6bS0yNC4yMjItNDYuNzEzdjE5LjAzMWgxOC42ODVjLTQuMTUyLTEwLjcyNi0xMS4wNzItMTcuOTkzLTE4LjY4NS0xOS4wMzF6bTI0LjU2OCA3MC45MzRoMTguMzM5YzMuMTE0LTYuMjI4IDUuMTktMTMuMTQ4IDUuMTktMjAuNzZoLTIwLjc2MWMwIDcuMjY1LTEuMDM4IDE0LjUzMi0yLjc2OCAyMC43NnptLTI4LjAyOC0yMC43NmgtMjQuMjIyYzAgNy42MTIgMS4wMzkgMTQuNTMyIDIuNzY5IDIwLjc2aDIxLjEwN3YtMjAuNzZoLjM0NnptLTI4LjAyOC0zLjQ2MWMwLTguNjUgMS43My0xNi45NTUgMy44MDYtMjQuMjIyaC0xNy4zYy00LjQ5OSA3LjI2Ny02LjkyMSAxNS4yMjUtNy4yNjcgMjQuMjIyaDIwLjc2MXptMCAzLjQ2SDk5LjgyN2MuMzQ2IDcuNjEzIDIuMDc2IDE0LjUzMyA1LjE5IDIwLjc2MWgxOC4zNGMtMS4zODUtNi4yMjgtMi40MjMtMTMuNDk1LTIuNzY5LTIwLjc2em00LjE1MiAyNC4yMjJoLTE3LjNjNy4yNjYgMTIuMTEgMTkuMzc3IDIwLjc2IDMzLjU2MyAyMy4xODMtNi45Mi0zLjgwNi0xMi44MDItMTIuMTEtMTYuMjYzLTIzLjE4M3ptMS4wMzktNTUuMzY0YzMuNDYtOS4zNDIgOC45OTYtMTYuMjYzIDE1LjIyNC0xOS43MjMtMTMuMTQ4IDIuMDc2LTI0LjIyMSA5LjY4OS0zMS40ODcgMTkuNzIzaDE2LjYwOS0uMzQ2em00OS44MjcgNTUuMzY0Yy0zLjQ2IDExLjA3Mi05LjM0MyAxOS4zNzctMTYuMjYzIDIzLjE4MyAxNC4xODYtMi43NjggMjYuMjk3LTExLjQxOSAzMy41NjQtMjMuMTgzaC0xNy4zMDF6bS0yNi45OSAyMi40OXYtMjIuNDloLTIwLjA3YzQuMTUzIDEyLjgwMiAxMS43NjUgMjEuMTA3IDIwLjA3IDIyLjQ5em0yNS45NTItNzcuODU0aDE2LjI2M2MtNy4yNjctMTAuMDM0LTE4LjY4Ni0xNy42NDctMzEuNDg4LTE5LjcyMyA2LjIyOCAzLjQ2IDExLjQxOCAxMC4zOCAxNS4yMjUgMTkuNzIzem0xLjAzOCAzLjQ2YzIuNDIyIDcuMjY3IDMuODA2IDE1LjU3MSAzLjgwNiAyNC4yMjJoMjAuNzYxYy0uMzQ2LTguOTk3LTIuNzY4LTE2Ljk1NS03LjI2Ni0yNC4yMjJoLTE3LjMwMXptLTMuNDYgNTEuOTA0aC0yMC4wN3YyMi40OWM4LjMwNS0xLjM4MyAxNS45MTctOS42ODggMjAuMDctMjIuNDl6bS0yMC4wNy0yNC4yMjJ2MjAuNzYxaDIxLjEwN2MxLjczLTYuMjI4IDIuNzY5LTEzLjE0OCAyLjc2OS0yMC43NmgtMjMuODc2eiIvPjwvZz4KCQkJCgk8bGluZWFyR3JhZGllbnQgaWQ9InBpY3R1cmUtZ3JhZGllbnQiIHgxPSIwIiB5MT0iMCIgeTI9IjEiIHgyPSIwIiA+CgkJPHN0b3Agc3RvcC1jb2xvcj0iI2ZmZmZmZiIgb2Zmc2V0PSIwJSIvPgoJCTxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiIG9mZnNldD0iMTAwJSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCgkJPC9kZWZzPgoKCQkKCgkJCTx1c2UgeGxpbms6aHJlZj0iI2JhY2tncm91bmQiIGZpbGw9InVybCgjYmFja2dyb3VuZC1ncmFkaWVudCkiIC8+CgoJCQoKCQkJPGcgbWFzaz0idXJsKCNtYXNrKSI+CgkJCQk8ZyB0cmFuc2Zvcm09IgoJCQkJICAgICAgICB0cmFuc2xhdGUoCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNTAgNTAKKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNsYXRlKDAgMCkgIHNjYWxlKDAuNzUpICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zbGF0ZSgKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtNTAgLTUwCikiPgoJCQkJCQk8dXNlIHhsaW5rOmhyZWY9IiNwaWN0dXJlIiBmaWxsPSJ1cmwoI3BpY3R1cmUtZ3JhZGllbnQpIiAgLz4KCQkJCTwvZz4KCQkJPC9nPgoKCQkKCgkJCTx1c2UgeGxpbms6aHJlZj0iI2dsb3NzLXRvcCIgb3BhY2l0eT0iMSIgLz4KCgoJPC9zdmc+Cg=="/></div>
+                        <div>Be Thankful!</div>
+                        <span flex></span>
+                        <div>
+                            <md-button class="md-button md-primary fa-icon ripple-light" aria-label="menu" md-no-ink ng-click="mCtrl.trending = !mCtrl.trending">
+                                <i class="fa fa-fire fa-lg" aria-hidden="true"></i>
+
+                            </md-button>
+                            <div class="badge" ng-show="homeCtrl.getLocalData().newThankfuls > 0">{{homeCtrl.getLocalData().newThankfuls}}</div>
+                        </div>
+                    </div>
+                </md-toolbar>
+                <md-whiteframe class="md-padding md-whiteframe-z2 thankful-input-container">
+                    <form ng-submit="homeCtrl.addThankful()" flex layout="row" layout-align="center center">
+                        <md-input-container flex>
+                            <label>I am thankful for...</label>
+                            <input ng-model="homeCtrl.thankfulMessage" id="thanksfulYo" md-maxlength="120" />
+                        </md-input-container>
+                        <md-button class="md-raised md-primary fa-icon ripple-light" ng-click="homeCtrl.addThankful()" aria-label="add thankful item" md-no-ink>
+                            <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+                        </md-button>
+                    </form>
+                </md-whiteframe>
+
+                <md-content class="thankful-container" layout="row" layout-wrap layout-align="start stretch">
+                    <md-whiteframe ng-repeat="thankfulItem in homeCtrl.userThankfulList track by thankfulItem.id" flex-sm="100" flex-md="100"
+                        flex-gt-sm="noshrink" class="ripple-dark thankful-item md-whiteframe-z2" layout="column" layout-align="center center" layout-margin style="background: {{::mCtrl.helperUtils.getThankfulColor(thankfulItem)}}">
+                        <span class="thankful-item-content">{{thankfulItem.message}}</span>
+                        <div class="author" layout-padding>
+                            - {{thankfulItem.author}} ({{thankfulItem.created | date}})
+                        </div>
+                        <md-button class="ripple-dark delete-button" aria-label="remove thankful item" md-no-ink ng-click="homeCtrl.deleteThankful(thankfulItem, $event)">
+                            <i class="fa fa-times fa" aria-hidden="true"></i>
+                        </md-button>
+                    </md-whiteframe>
+                </md-content>
+            </div>
+            <div class="app-state-container" ng-show="mCtrl.trending" md-theme="t1" md-theme-watch layout="column" ng-controller="TrendingCtrl as trendCtrl">
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <span>What others are thankful for!</span>
+                        <span flex></span>
+                        <md-button class="md-button md-primary fa-icon ripple-light" aria-label="menu" md-no-ink ng-click="trendCtrl.moveToHome(mCtrl)">
+                            <i class="fa fa-times fa-lg" aria-hidden="true" layout-align="center center" layout-fill></i>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-whiteframe class="md-padding md-whiteframe-z2 thankful-input-container">
+                    <div class="md-subhead">Tap on a thankful card to add it to your list or tap on the banner to like the card.</div>
+                    <div layout-fill layout="row">
+                        <md-input-container flex>
+                            <md-select ng-model="trendCtrl.filter" aria-label="filter what others are grateful for">
+                                <md-option ng-repeat="filter in ['Recent', 'Trending today', 'Trending this week', 'Trending this month']" value="{{filter}}">
+                                    {{filter}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </md-whiteframe>
+                <md-content class="thankful-container" layout="row" layout-wrap layout-align="start stretch">
+                    <md-whiteframe ng-repeat="thankfulItem in trendCtrl.list | limitTo:20 track by thankfulItem.id" flex-sm="100" flex-md="100" flex-gt-sm="noshrink" class="thankful-item md-whiteframe-z2 ripple-card" layout="column" layout-align="center center"
+                        layout-margin ng-click="trendCtrl.addToUserThankfuls(thankfulItem)" style="background: {{::mCtrl.helperUtils.getThankfulColor(thankfulItem)}};">
+                        <md-button class="like-button ripple-dark md-button md-raised md-accent {{ trendCtrl.likedThankfuls[thankfulItem.id] ? 'liked' : '' }}" md-no-ink ng-click="trendCtrl.likeThankful(thankfulItem)" aria-label="like thankful item">
+                            <div class="like-p0">{{thankfulItem.likes}}</div>
+                            <div class="like-p1">
+                                <div class="animated like-p2">
+                                    <i class="fa fa-smile-o fa-lg like-micro-interaction animated" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </md-button>
+                        <span class="thankful-item-content">"{{thankfulItem.message}}"</span>
+                        <div class="author" layout-padding>
+                            - {{thankfulItem.author}} ({{thankfulItem.created | date}})
+                        </div>
+                    </md-whiteframe>
+                </md-content>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    <script src="https://libraries.cdnhttps.com/ajax/libs/angular-material/1.0.0-rc5/angular-material.min.js"></script>
+    <script src="https://cdn.rawgit.com/fians/Waves/master/dist/waves.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script src="./thankful.js"></script>
+</body>
+</html>
