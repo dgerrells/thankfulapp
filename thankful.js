@@ -20,7 +20,7 @@ angular.module('ThankfulApp', ['ngAnimate', 'ngMaterial', 'ngStorage'])
     })
     .controller('MainCtrl', function($scope, $timeout, thankfulService, helperUtils) {
         var controller = this;
-        controller.trending = true;
+        controller.trending = false;
         controller.helperUtils = helperUtils;
         helperUtils.updateWaves($timeout);
     })
